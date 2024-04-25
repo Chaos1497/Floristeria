@@ -30,7 +30,6 @@ while True:
                 print("\x1b[4;3;37m"+"Cliente guardado"+'\033[0;m')
 
     elif opcion == 2:
-        terminado = True
         print("\x1b[1;33m"+"1. Margaritas"+'\033[0;m')
         print("\x1b[1;35m"+"2. Tulipanes"+'\033[0;m')
         print("\x1b[1;32m"+"3. Rosas"+'\033[0;m')
@@ -42,7 +41,6 @@ while True:
         entrega = input("\x1b[1;31m"+"¿Requiere entrega?: "+'\033[0;m')
         monto = input("\x1b[2;36m"+"Ingrese el monto: "+'\033[0;m')
         total=0
-        #while terminado:
         if entrega == 'Si' or entrega == 'si' or entrega == 'SI':
             entrega = True
             total = int(monto) + 1500
@@ -78,6 +76,7 @@ while True:
                 txtreport.write('\n' + str(k) + ' ' + str(suma))
                 txtreport.close()
         print("\x1b[4;3;37m"+"Reporte generado"+'\033[0;m')
-        
+
     else:
         print("Opción inválida")
+        raise ValueError
